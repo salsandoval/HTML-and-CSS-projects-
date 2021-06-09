@@ -1,0 +1,25 @@
+table {
+		border: 1px solid pink;
+		
+}
+
+
+td:hover {
+	background-color: yellow;
+	color:red;
+}
+
+tr, th {
+	background-color: black;
+	color: red;
+}
+
+tr, td {
+	background-color: darkgreen;
+	color: white;
+}
+
+body, table {
+	text-align: center;
+}
+
