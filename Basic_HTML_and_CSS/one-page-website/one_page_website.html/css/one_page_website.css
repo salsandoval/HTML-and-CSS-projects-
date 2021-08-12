@@ -1,33 +1,31 @@
+
+
 body {
-    font-family: sans-serif;
-    font-size: 12px;
-}
-
-input[type=text] {
-    width:auto;
-    margin: 8px 0;
-    border:0ch;
-    border-radius:0ch;
-}
-
-.row > .column {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .row > .column {
     padding: 0 8px;
-}
-
-.row:after {
+  }
+  
+  .row:after {
     content: "";
     display: table;
-    clear:both;
-}
-
-/* creates four columns that float nect to eachother*/
-.column {
+    clear: both;
+  }
+  
+  .column {
     float: left;
-    width: 25px;
-}
-
-/* The Modal (background) */
-.modal {
+    width: 25%;
+  }
+  
+  /* The Modal (background) */
+  .modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -39,15 +37,14 @@ input[type=text] {
     overflow: auto;
     background-color: black;
   }
-
   
-/* Modal Content */
-.modal-content {
+  /* Modal Content */
+  .modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
   }
   
@@ -68,9 +65,12 @@ input[type=text] {
     cursor: pointer;
   }
   
-  /* Hide the slides by default */
   .mySlides {
     display: none;
+  }
+  
+  .cursor {
+    cursor: pointer;
   }
   
   /* Next & previous buttons */
@@ -112,7 +112,10 @@ input[type=text] {
     top: 0;
   }
   
-  /* Caption text */
+  img {
+    margin-bottom: -4px;
+  }
+  
   .caption-container {
     text-align: center;
     background-color: black;
@@ -120,7 +123,7 @@ input[type=text] {
     color: white;
   }
   
-  img.demo {
+  .demo {
     opacity: 0.6;
   }
   

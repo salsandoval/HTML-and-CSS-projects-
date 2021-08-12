@@ -3,7 +3,9 @@
 	<head>
 		<title>Stephs hairy business</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="one_page_website.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/one_page_website.css">
+		<script src="./JS/one_page_website.js"></script>
 	</head>
 	<body>
 		<!-- NAV -->
@@ -26,26 +28,85 @@
 				she will make you hair dreams come true. If you don't believe me here are just a few of her clients.</p>
 		</div>
 		
-		<!-- THIS SECTION IS FOR PICTURES -->
-		<div id="gallery">
-			<div>
-				<img src="./images/image_1.jpg" alt="hair pic">
-				<img src="./images/image_2.jpg" alt ="hair pic">
-				<img src="./images/image_3.jpg" alt="hairpic">
-				<img src="./images/image_4.jpg" alt="hair pic">
+		<!-- pictures used to open light box -->
+		<div id="row">
+			<div class="column">
+				<img src="./images/image_1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="hair pic">
+			</div>
+			<div class="column">
+				<img src="./images/image_2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" alt="hair pic">
+			</div>
+			<div class="column">
+				<img src="./images/image_3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" alt="hair pic">
+			</div>
+			<div class="column">
+				<img src="./images/image_4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor" alt="hair pic">
 			</div>
 		</div>
 		<!-- END PICTURE SECTION -->
 		
-		<!-- VIDEO SECTION -->
-		<div>
-			<h2>Not a video of steph but she can do all these.</h2>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/cxVy0uF0ZrY"
-			title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
+		<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+	<span class="close cursor" onclick="closeModal()">&times;</span>
+	<div class="modal-content">
+  
+	  <div class="mySlides">
+		<div class="numbertext">1 / 4</div>
+		<img src="./images/image_1.jpg" style="width:100%">
+	  </div>
+  
+	  <div class="mySlides">
+		<div class="numbertext">2 / 4</div>
+		<img src="./images/image_2.jpg" style="width:100%">
+	  </div>
+  
+	  <div class="mySlides">
+		<div class="numbertext">3 / 4</div>
+		<img src="./images/image_3.jpg" style="width:100%">
+	  </div>
+  
+	  <div class="mySlides">
+		<div class="numbertext">4 / 4</div>
+		<img src="./images/image_4.jpg" style="width:100%">
+	  </div>
+
+
+	  <!-- Next/previous controls -->
+	  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+
+	<!-- Caption text -->
+    <div class="caption-container">
+		<p id="caption"></p>
+	  </div>
+
+
+	  <!-- Thumbnail image controls -->
+	  <div class="column">
+		<img class="demo cursor" src="./images/image_1.jpg" style="width:100%" onclick="currentSlide(1)" alt="hair pic">
+	  </div>
+  
+	  <div class="column">
+		<img class="demo cursor" src="./images/image_2.jpg" style="width:100%" onclick="currentSlide(2)" alt="hair pic">
+	  </div>
+  
+	  <div class="column">
+		<img class="demo cursor" src="./images/image_3.jpg" style="width:100%" onclick="currentSlide(3)" alt="hair pic">
+	  </div>
+  
+	  <div class="column">
+		<img class="demo cursor" src="./images/image_4.jpg" style="width:100%" onclick="currentSlide(4)" alt="hair pic">
+	  </div>
+	</div>
+  </div>
+
+
+
+
+
+
 		
-		
-		<!-- END VIDEO SECTION -->
 		
 		<!-- CONTACT INFO-->
 		<div id="contact">
