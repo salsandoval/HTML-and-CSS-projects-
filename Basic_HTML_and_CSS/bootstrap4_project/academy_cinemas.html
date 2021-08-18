@@ -31,10 +31,36 @@
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-primary my-2 my-sm-0 text-light" type="submit">Search</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchbutton">
+                  click to search 
+                </button>
               </form>
             </div>
           </nav>
+
+          <!-- search bar Modal -->
+          <div class="modal fade" id="searchbutton" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">A great choice</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  I think you will love this movie but just to make sure this is the movie you wanted
+                  click save changes to continue or close if you changed your mind.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/search bar modal-->
 
           <div class="jumbotron jumbotron-fluid bg-info text-center">
             <div class="container">
@@ -129,15 +155,73 @@
           </div>
 
           <!-- /showtimes -->
+          <!--jumbotron heading-->
+          <div class="jumbotron jumbotron-fluid bg-info mt-5 text-center">
+              <div class="container">
+                  <h1 class="display-4 hidden-sm-down" style="color:#fff;font-family:roboto;font-weight:900;text-transform:uppercase;">
+                  Movie Deals</h1>
+                  <p class="lead">Check out our monthly deals...</p>
+                  <!--Movie deals-->
+                  <button type="button"class="btn btn-outline-primary"  data-toggle="modal" data-target="#register">See our monthly movie deals!!</button>
+                  <!--/movie deals-->
+              </div>
+          </div>
+          <!--/jumbotron heading-->
+        
+            <!--email movie rewards section-->
           <div class="text-center" id="deals">
                 <form>
                     <h1 class="text-primary my-5">Sign up for Movie Club Rewards!</h1>   
                     <div class="form-group ">                     
                         <input type="email " class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary btn-info popover-dismiss" data-container="body" data-toggle="popover" data-placement="top" data-content="Sign up to get some crazy cool movie deals!!!">
+                      submit
+                    </button>
                 </form>
             </div>
+            <!--//email movie rewards section-->
+            <!--form modal-->
+            <div class="modal" tabindex="-1" role="dialog" id="register">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">SIgn up to receive sick movie delas...</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <form>
+                      <div class="form-group">
+                        <label for="firstname">First name</label>
+                        <input type="text" class="form-control" id="first name" placeholder="First name...">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" placeholder="Last name...">
+                      </div>
+                    </form>
+                    <form>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Email...">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" id="password" placeholder="Password...">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/form modal-->
     
             <div class="container my-5">
                 <ul class="nav nav-inline">
@@ -167,5 +251,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    
+    <script>
+        $('.popover-dismiss').popover({
+          trigger: 'focus'
+        });
+    </script>
+
   </body>
 </html>
