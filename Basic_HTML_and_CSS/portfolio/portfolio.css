@@ -1,7 +1,23 @@
 /**** GENERAL STYLING ****/
+/*Affects the whole page*/
+html {
+    scroll-behavior: smooth;/* makes the page scroll smoothly when butttons on nav bar is clicked*/
+}
 /* Body */
 body {
-    margin: 0%
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity;
+    letter-spacing: .2vw;
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+/* fade effect when page is loaded*/
+body.fade-out {
+    opacity: .1;
 }
 
 /* Heading 1 elements */
@@ -22,6 +38,7 @@ h1:hover {
 
 .white-text {
     color: #fff;
+    padding-top:10vh;
 }
 
 /* Paragraph elements */
@@ -52,6 +69,8 @@ p:hover {
 /* Anchor elements */
 a {
     color: blue;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* quotation elements */
@@ -64,11 +83,25 @@ img {
     filter: grayscale(75%);
     border-radius: 8px;
     max-width: 100%;
-    height: 340px;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto auto auto;
 }
+
+/* image elements hover effects*/
+img:hover {
+    filter: grayscale(5%);
+}
+
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+
+
 
 #Typing_video {
     position: fixed;
@@ -126,10 +159,10 @@ footer {
     float: left;
     display: block;
     color:white;
-    padding: 14px 16px;
+    padding: .75vw 1vw;
     text-decoration: none;
     font-family: Avant Garde, Helvetica;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     position: relative;
     -webkit-animation: moveNavText 5.75s;
@@ -144,7 +177,7 @@ footer {
 
 @media screen and (max-width: 576px) {
     .navbar a{
-        width: 25%;
+        width: 20%;
         font-size: 12px;
     }
 }
@@ -153,6 +186,7 @@ footer {
     background-color: #f4f4f4;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .navbar a.active {
@@ -180,7 +214,8 @@ footer {
     background: rgba(0,0,0, 0.5);
     color: white;
     width: 100%;
-    padding: 20px;
+    height: 100vh;
+    padding-top: 2vh;
     position: relative;
     -webkit-animation: moveVideoText 5.75s;
     animation: moveVideoText 5.75;
@@ -192,6 +227,112 @@ footer {
 } 
 /****** END VIDEO STYLING*****/
 
+/***** Slideshow Styling *****/
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);    
+}
+
+.mySlides{
+    display: none; 
+}
+
+/* Slideshow section / container */
+#Slideshow_Container {
+    width: 39.5vw; 
+    height: auto; 
+    padding-top: 4%; 
+    position: relative; 
+    margin:auto; 
+}
+
+/* Images  within the slideshow */
+.Slideshow_Images {
+    vertical-align: middle; 
+    height: auto; 
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75); 
+    width: 100%; 
+}
+
+/* Next and previous buttons */
+.Previous, .Next {
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    width: auto; 
+    padding: 2vw; 
+    color: darkgray; 
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0; 
+    user-select: none; 
+    transition: 0.6s ease; 
+}
+
+/* Positioning the next button on the right hand side */
+.Next {
+    right: 0; 
+    border-radius: 3px 0 0 3px;
+}
+
+/* Hover effect on slide show buttons */
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white;
+}
+
+/* Slideshow text */
+.text {
+    color: white; 
+    padding: 1vw;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    text-align: center; 
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw; 
+    font-size: 1.5vw; 
+    background-color: rgba(0, 0, 0, 0.75); 
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px; 
+}
+
+/* Styling of the dots under the slideshow */
+.dot {
+    cursor: pointer; 
+    height: 1vw; 
+    width: 1vw;
+    margin: .25vw; 
+    background-color: white;
+    border-radius: 50%; 
+    display: inline-block; 
+    transition: background-color 0.6s ease;
+    z-index: 1; 
+}
+
+/* Hover effect for slideshow dots */
+.active, .dot:hover {
+    background-color: black; 
+}
+
+/* Fading animation for slideshow */
+.fade {
+    animation-name: fade; 
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade; 
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+
+@keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+/***** End Slideshow Styling *****/
+
 /***** TABLE STYLING *****/
 * {
     box-sizing: border-box;
@@ -200,9 +341,8 @@ footer {
 .column_1 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 400px;
+    padding: 1.6%;
+    height: 450px;
     background-color: #f2f2f2;
 }
 
@@ -215,9 +355,8 @@ footer {
 .column_2 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 1.9%;
-    height: 400px;
+    padding: 1.6%;
+    height: 450px;
     background-color: #4d4d4d;
 }
 
@@ -231,51 +370,103 @@ footer {
     display: table;
     clear: both;
 }
-/***** END TABLE STYLING *****?
+/***** END TABLE STYLING *****/
 
-/**** CONTACT STYLING ****/
-input[type=text] {
-    width: 100px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: perpetua, Rockwell Extra Bold;
+/***** Contact Form Styling *****/
+/* Button used to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+    position: fixed; 
+    bottom: 1.75vw; 
+    right: 1.75vw; 
+    width: 25vw; 
+    background-color: white; 
+    color: black; 
+    border: solid black; 
+    cursor: pointer; 
+    -webkit-animation: movePopup 5s; 
+    animation: movePopup 5s; 
 }
 
-input[type=text]:hover {
-    box-shadow: 0 0 5px #00004d inset;
+/* movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport */
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
 }
 
-/**** SUBMIT BUTTON ****/
-input[type=submit] {
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+/* Styling for the contact form */
+.form-popup {
+    border: 3px solid #f0f1f0; 
+    z-index: 8; 
+    display: none; 
+    position: fixed; 
+    bottom: .5vw; 
+    right: .5vw;
+}
+
+/* Form styling */
+.form-container {
+    max-width: 49vw; 
+    padding: 1vw; 
+    background-color: white; 
+}
+
+/* Input fields */
+.form-container input[type=text] {
+    width: 100%; 
+    padding: .93vw; 
+    margin: .6vw 0 .6vw 0; 
+    border: none; 
+    background: Gainsboro; 
+    font-size: 1vw; 
+}
+
+/* General styling for all buttons */
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw; 
+    font-size: 1.5vw; 
+    font-weight: bold; 
+    padding: 1.5vw; 
+    cursor: pointer; 
+    width: 100%; 
+    height: auto; 
+}
+
+/* Hover effect for contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white; 
+    background-color: black; 
+    transition-duration: 1s; 
+    -webkit-transition-duration: 1s; 
+    border-color: silver; 
+}
+
+/* Submit button */
+.form-container .btn {
+    background-color: white; 
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh; 
+}
+
+/* Close button */
+.form-container .cancel {
     background-color: black;
     color: white;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Perpetua, Rockwell Extra Bold;
+    border-color: gray;
 }
 
-input[type=submit]:hover {
-    background-color: white;
-    color: black;
-    transform: scale(1.5);
-    transition: transform1.5s;
+/* Styling for close button on hover */
+.form-container .cancel:hover {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
 }
-
-form {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    font-family: "trebuchet MS", Optime;
-}
-/***** END OF CONTACT****/
+/***** End of Contact Form Styling *****/

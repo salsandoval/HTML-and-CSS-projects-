@@ -11,10 +11,12 @@
 
             <div class="navbar">
                 <a class="active" href="#home">Home</a>
+                <a href="#slideshow">Slideshow</a>
                 <a href="#About">About</a>
                 <a href="#Github">Github</a>
-                <a href="#Contact">Contact</a>
-            </div>
+                <!-- i added on click and ondblclick functions to open and close contact form-->
+                <a onclick="openForm()" ondblclclick="closeForm()">Contact</a>
+                </div>
             <!-- Breaks to add space between nav and the first heading -->
             <br>
             <br>
@@ -47,6 +49,57 @@
                 </strong>
             </div>
 
+            <!-- Slideshow section -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="img/mypic.jpg" alt="Picture of myself">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="img/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos"> 
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="img/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="img/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="img/SQL_and_Database.jpg" alt="SQL logo"> 
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="img/holla.jpg" alt="Replace with a picture of your choosing"> 
+                        <div class="text"><a class="white-text" onclick="openForm()" href="#Contact">Contact me now!</a></div> 
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusslides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots -->
+
+                <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
+            </div>
+        </div>
             <!-- About section-->
             <div class="row" id="About">
                 <!-- Left Column-->
@@ -84,27 +137,27 @@
                 </div>
             </div>
 
-            <!--Contact section-->
-            <div class="Row" id="Contact">
-                <!--contact image, left column-->
-                <div class="column_2 column_tall">
-                    <img src="img/email.png" alt="email picture">
+          <!--contact form-->
+            <div id="Contact">
+                <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+                <div class="form-popup" id="myForm">
+                     <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> 
+                         <h1>Contact</h1>
+                         <label for="name"><b>Name</b></label>
+                           <input type="text" placeholder="Type your name here" name="name" required>
+                         <label for="phone"><b>Phone</b></label>
+                           <input type="text" placeholder="Type your phone number here" name="phone">
+                         <label for="email"><b>Email</b></label>		
+                           <input type="text" placeholder="Type your email address here" name="email" required>
+                         <label for="message"><b>Message</b></label>
+                           <input type="text" placeholder="Type your message here" name="message">
+              
+                         <button type="submit" class="btn">SUBMIT</button>
+                         <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                     </form>
                 </div>
-                <!-- Contact Form, right column-->
-                <div class="column_1 column_tall">
-                    <h1>Contact</h1>
-                    <form action="https://formspree.io/f/mlealdpq" method="POST">
-                        <label>Name</label>
-                            <input type="text" placeholder="please enter your name here">
-                        <label>Email:</label>
-                            <input type="text" id="Email" name="Email" placeholder="please enter email here">
-                        <label>Message</label>
-                            <input type="text" id="Message" name="Message" placeholder="please write your message here">
-                            <input type="submit" value="SUBMIT">
-                    </form>
-                </div>
-            </div>
-
+             </div>
+             
         <!-- Footer Section-->
         <footer>
             <p>
@@ -112,5 +165,6 @@
                 <br>
             </p>
         </footer>
+        <script></script>
         </body>
 </html>
